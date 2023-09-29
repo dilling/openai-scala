@@ -1,5 +1,11 @@
 # bloop and metals
+.bloop
 .bsp
+.metals
+metals.sbt
+
+# vscode
+.vscode
 
 # intellij idea
 .idea
