@@ -3,7 +3,7 @@ package dev.maxmelnyk.openaiscala.utils
 import cats.syntax.functor.toFunctorOps
 import dev.maxmelnyk.openaiscala.models.images.{Image, ImageSettings}
 import dev.maxmelnyk.openaiscala.models.models.Model
-import dev.maxmelnyk.openaiscala.models.text.completions.chat.{ChatCompletion, ChatCompletionSettings}
+import dev.maxmelnyk.openaiscala.models.text.completions.chat.{ChatCompletion, ChatCompletionSettings, Function}
 import dev.maxmelnyk.openaiscala.models.text.completions.{Completion, CompletionSettings}
 import dev.maxmelnyk.openaiscala.models.text.edits.{Edit, EditSettings}
 import io.circe.generic.extras.Configuration
@@ -33,6 +33,7 @@ private[openaiscala] object JsonImplicits extends CommonJsonImplicits {
   implicit val chatCompletionUsageDecoder: Decoder[ChatCompletion.Usage] = deriveConfiguredDecoder
   implicit val chatCompletionDecoder: Decoder[ChatCompletion] = deriveConfiguredDecoder
 
+  implicit val functionEncoder: Encoder[Function] = deriveConfiguredEncoder
   implicit val chatCompletionSettingsEncoder: Encoder[ChatCompletionSettings] = deriveConfiguredEncoder
 
   // edits
